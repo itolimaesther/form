@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:400,600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Form</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #ccc;
+        /* width: 10%; */
+        height: 100%;
+        /* margin: 0 auto; */
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        font-family: 'Open Sans';
+      }
+
+      .mailoptin_button-close {
+        margin: 9px;
+        float: right;
+        font-size: 27px;
+        background-color: #fff;
+        border: 0;
+        color: #b7b7b7;
+        display: flex;
+        flex-direction: row;
+
+      }
+
+      .mailoptin_button--close {
+        margin: 9px;
+        float: left;
+        font-size: 27px;
+        background-color: #fff;
+        border: 0;
+        color: #b7b7b7;
+        display: flex;
+        flex-direction: row;
+
+      }
+      .mailoptin {
+        background-color: #fff;
+        width: 55%;
+        margin: 0 auto;
+      }
+      .mailoptin_content--heading {
+        margin: 0.5rem;
+    border-width: 2px;
+    padding-bottom: 0.8rem;
+    font-size: 20px;
+    text-align: center;
+      }
+
+      .mailoptin_content--divider {
+        width: 60%;
+        border-bottom: 1px solid #ccc;
+        margin: 0 auto;
+        
+      }
+      .row{
+          padding: 2rem 0 2rem 2rem;
+          display: flex;
+      }
+      .col-1-of-2{
+          width: 60%;
+          align-content: center
+      }
+      .mailoptin_content--heading-sec{
+        font-weight: 700;
+        font-size: 40px;
+        text-align: center;
+        margin: 1rem 0 1rem 0;
+      }
+      .mailoptin_content-tert, .reserve_button, .footer_content{
+        width: 70%;
+         margin: 0 auto;
+      }
+
+      .mailoptin_content--uncover, .footer_content{
+        color: rgb(80, 80, 80);
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+      }
+
+      .reserve_button, .footer_content{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .reserve_button--btn{
+        padding: 14px;
+        background-color: rgb(238, 91, 5);
+         border-radius: 45px;
+         border: 0;
+         font-size: 20px;
+         font-weight: 700;
+         color: #fff;
+      }
+      .footer_content{
+        width: 100%;
+        color: rgb(131, 131, 131)
+        
+      }
+      .footer_content--primary{
+        font-weight: 700;
+      }
+
+      
+
+      .blob_img{
+        position: absolute;
+    right: 9%;
+    top: 4%;
+    width: 27rem;
+    transform: skewY(20deg);
+    height: 30rem;
+    background: url(img/man.png);
+    background-size: contain;
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(252,176,69,1) 100%);
+    display: block;
+    -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      }
+      .blob_img img {
+        width: 100%;
+    height: 100%;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      }
+
+      .blob_img--two{
+        position: absolute;
+        right: 55%;
+    top: 100%;
+    width: 27rem;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    /* transform: skewY(50deg); */
+    height: 30rem;
+    background: url(img/man.png);
+    background-size: contain;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(252,176,69,1) 100%);
+    display: block;
+    -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+    border-radius: 80% 63% 63% 95% / 63% 63% 63% 95%;
+      }
+
+      .blob_img--two img{
+        width: 100%;
+    height: 100%;
+    border-radius: 80% 63% 63% 95% / 63% 63% 63% 95%;
+      }
+
+      .container_two {
+        margin-top: 16rem;
+      }
+
+      @media only screen and (max-width: 1024px){
+        .blob_img{
+          position: absolute;
+    right: 2%;
+    top: 1%;
+      }
+      .reserve_button--btn {
+         font-size: 15px;
+      }
+      .mailoptin_content--heading-sec{
+        font-size: 30px;
+      }
+      
+       }
+       @media only screen and (max-width: 768px){
+        .blob_img{
+          position: absolute;
+    right: 3%;
+    top: 12%;
+    width: 39vw;
+
+      }
+      .reserve_button--btn {
+         font-size: 10px;
+      }
+      .mailoptin_content--heading-sec{
+        font-size: 25px;
+      }
+      
+       }
+
+       @media only screen and (max-width: 425px){
+        .blob_img{
+           visibility: hidden;
+      }
+      .reserve_button--btn {
+         font-size: 10px;
+      }
+      .mailoptin_content--heading-sec{
+        font-size: 25px;
+      }
+      
+       }
+
+       @media only screen and (max-width: 1024px){
+        .blob_img--two{
+          position: absolute;
+    right: 2%;
+    top: 1%;
+      }
+      .reserve_button--btn {
+         font-size: 15px;
+      }
+      .mailoptin_content--heading-sec{
+        font-size: 30px;
+      }
+      
+       }
+       @media only screen and (max-width: 768px){
+        .blob_img--two{
+          position: absolute;
+    right: 3%;
+    top: 12%;
+    width: 39vw;
+
+      }
+      .reserve_button--btn {
+         font-size: 10px;
+      }
+      .mailoptin_content--heading-sec{
+        font-size: 25px;
+      }
+      
+       }
+
+       @media only screen and (max-width: 425px){
+        .blob_img--two{
+           visibility: hidden;
+      }
+      .reserve_button--btn {
+         font-size: 10px;
+      }
+      .mailoptin_content--heading-sec{
+        font-size: 25px;
+      }
+      
+       }
+    </style>
+
+    <div class="container">
+      <div class="mailoptin">
+        <button class="mailoptin_button--close">&#10006;</button>
+        <div class="row">
+          <div class="col-1-of-2 mailoptin_content">
+            <h3 class="mailoptin_content--heading">Free Webinar</h3>
+            <div class="mailoptin_content--divider"></div>
+            <p class="mailoptin_content--heading-sec">Join the Webinar</p>
+            <div class="mailoptin_content-tert">
+              <p class="mailoptin_content--uncover">Uncover the secrets of online marketing in the webinar.</p>
+            </div>
+            <div class="reserve_button">
+              <button class="reserve_button--btn">Reserve Your Seat Now!</button>
+            </div>
+          <p class="footer_content"><span class="footer_content--primary">FREE BONUS: </span>The automated conversion funnels I us to achieve results</p>
+          </div>
+          <div class="col-2-of-2">
+            <div class="blob_img">
+              <img src="img/man.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container_two">
+      <div class="mailoptin">
+        <button class="mailoptin_button-close">&#10006;</button>
+        <div class="row">
+          <div class="col-1-of-2">
+            <div class="blob_img--two">
+              <img src="img/man.png" alt="" />
+            </div>
+          </div>
+          <div class="col-2-of-2 mailoptin_content">
+            <h3 class="mailoptin_content--heading">Free Webinar</h3>
+            <div class="mailoptin_content--divider"></div>
+            <p class="mailoptin_content--heading-sec">Join the Webinar</p>
+            <div class="mailoptin_content-tert">
+              <p class="mailoptin_content--uncover">Uncover the secrets of online marketing in the webinar.</p>
+            </div>
+            <div class="reserve_button">
+              <button class="reserve_button--btn">Reserve Your Seat Now!</button>
+            </div>
+          <p class="footer_content"><span class="footer_content--primary">FREE BONUS: </span>The automated conversion funnels I us to achieve results</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <style>
+            /*Re-writting Browser Resets - you can take this off in production */ 
+               
+               body{
+                   margin: 0;
+                   padding: 0;
+                   background-color: #ccc;
+                   padding-top: 50px !important;
+               }
+               
+               *{
+                   padding: 0;
+                   margin: 0;
+                   box-sizing: border-box;
+               }
+               
+                html, body, div, span, applet, object, iframe,
+                h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+                a, abbr, acronym, address, big, cite, code,
+                del, dfn, em, img, ins, kbd, q, s, samp,
+                small, strike, strong, sub, sup, tt, var,
+                b, u, i, center,
+                dl, dt, dd, ol, ul, li,
+                fieldset, form, label, legend,
+                table, caption, tbody, tfoot, thead, tr, th, td,
+                article, aside, canvas, details, embed, 
+                figure, figcaption, footer, header, hgroup, 
+                menu, nav, output, ruby, section, summary,
+                time, mark, audio, video {
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    font-size: 100%;
+                    font: inherit;
+                    vertical-align: baseline;
+                }
+        
+               html {
+                  line-height: 1.15; /* 1 */
+                  -ms-text-size-adjust: 100%; /* 2 */
+                  -webkit-text-size-adjust: 100%; /* 2 */
+                }
+               /*Reset Ends*/
+               
+                .mailoptin_blend {
+                    margin: 0 20px;
+                }
+        
+               .mailoptin_blend_tag_1 , .mailoptin_blend_tag_3, .mailoptin_blend_agreement_note, .mailoptin_blend_input, .mailoptin_blend_input_submit{
+                   font-family: 'Open Sans', sans-serif;
+               }
+               
+               .mailoptin_blend_tag_1 {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #686868;
+                }
+               
+               .mailoptin_blend_tag_1 {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #686868;
+                    margin-bottom: 30px;
+                }
+               
+               .mailoptin_blend_input {
+                    display: block;
+                    width: 100%;
+                    border-width: 0 0 3px 0;
+                    margin-bottom: 20px;
+                    border-bottom-color: #000;
+                    border-bottom-style: solid;
+                    padding: 20px;
+                    font-size: 15px;
+                    font-weight: 600;
+                    color: #686868;
+                    background: transparent;
+                }
+               
+               .mailoptin_blend_agreement_note {
+                    text-align: center;
+                    font-size: 11px;
+                    font-weight: 600;
+                    color: #686868;
+                }
+               
+               .mailoptin-clearfix {
+                    background: #e7e7e7;
+                    padding: 40px;
+                    border-radius: 3px;
+                }
+               
+               .mailoptin_blend_tag_3 {
+                    font-size: 18px;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    font-weight: 600;
+                    color: #686868;
+                   
+                }
+               
+               .mailoptin_blend_input_submit {
+                    padding: 15px 20px;
+                    width: 100%;
+                    font-size: 16px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                    background: #000;
+                    border: 0;
+                    color: #fff;
+                    cursor: pointer;
+                }
+               
+               .mailoptin_blend_tag_2 {
+                    font-family: 'Abril Fatface', cursive;
+                    font-size: 30px;
+                }
+               
+               .mailoptin_blend_inner {
+                   width: 100%;
+                   margin: 0 auto;
+                   background: #fff;
+                   position: relative;
+                   border-radius: 3px;
+                   box-shadow: 0px 0px 3px #9d9d9d;
+                }
+               
+               .mailoptin_blend_right {
+                    width: 100%;
+                    padding-right: 0;
+                    text-align: center;
+                }
+               
+               .mailoption_ricko_image img {
+                    width: auto;
+                    max-width: 100%;
+                    height: auto;
+                }
+               
+               .mailoptin-clearfix::after {
+                    clear: both;
+                }
+                .mailoptin-clearfix::before, .mailoptin-clearfix::after {
+                    display: table;
+                    content: " ";
+                }
+               
+                .mailoptin_blend_form_input {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    padding: 15px 10px;
+                    border-width: 0 0 3px 0 !important;
+                    border-bottom-color: #dbdbdb;
+                    border-bottom-style: solid;
+                    font-size: 14px;
+                }
+               
+                .mailoptin_blend_button {
+                    width: 100%;
+                    padding: 15px 20px;
+                    background: #000;
+                    border: 0;
+                    margin-top: 20px;
+                    color: #fff;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    font-weight: 700;
+                }
+               
+               
+               .mailoptin_blend_input:focus {
+                    border-bottom-color: #d0d0d0;
+                    transition: all 0.5s cubic-bezier(.79,.14,.15,.86) 0.2s;
+                }
+               
+               .mailoptin_blend_input_submit:focus {
+                    background-color: #d0d0d0;
+                    transition: all 0.5s cubic-bezier(.79,.14,.15,.86) 0.2s;
+               }
+               .mailoptin_blend_close_button {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    font-size: 20px;
+                    color: #6a6a6a;
+                    padding: 10px 20px;
+                    background: none;
+                    border: 0;
+                    cursor: pointer;
+                }
+               
+                .mailoptin_blend_left {
+                    float: left;
+                    width: 100%;
+                    display: block;
+                    text-align: left;
+                    padding-left: 0;
+                    margin-top: 20px;
+                    max-height: 100%;
+                    min-height: 100%;
+                }
+               
+               .mailoptin_blend_right{
+                   display: none;
+               }
+               
+               @media only screen and (min-width: 480px){
+                   .mailoptin_blend_inner {
+                        width: 400px;
+                   }
+               }
+               
+               @media only screen and (min-width: 620px){
+        
+               .mailoptin_blend_tag_2 {
+                    font-size: 40px;
+                } 
+                   
+               }
+               
+               @media only screen and (min-width: 768px){
+                   
+                    .mailoptin_blend_left {
+                        margin-top: 50px;
+                    }
+                   
+                   .mailoptin-clearfix {
+                        background: #e7e7e7;
+                        padding: 0;
+                    }
+                   
+                    .mailoptin_blend_left {
+                       float: left;
+                       width: 50%;
+                       padding-left: 80px;
+                    }
+                    .mailoptin_blend_right {
+                       width: 50%;
+                       padding-left: 35px;
+                       padding-right: 0;
+                       display: table-cell;
+                    }
+                    .mailoptin_blend_inner {
+                       width: 700px;
+                    }
+                    .mailoptin_blend_right {
+                       text-align: left;
+                    }
+               }
+               
+               @media only screen and (min-width: 820px){
+                   .mailoptin_blend_inner {
+                       width: 800px;
+                    }
+               }
+           </style>
+            
+            <div class="mailoptin_blend">
+            <div class="mailoptin_blend_inner">
+              <button class="mailoptin_blend_close_button">&#10006;</button>
+               <div class="mailoptin-clearfix">
+                   <div class="mailoptin_blend_top">
+                       <div class="mailoptin_blend_left">
+                         <div class="mailoptin_blend_tag_1">
+                             Limited time offer
+                         </div>
+                         <div class="mailoptin_blend_tag_2">
+                             Get 15% OFF
+                         </div>
+                         <div class="mailoptin_blend_tag_3">
+                             Subscribe to our email list and <br>
+                             get 15% off for your first order. 
+                         </div>
+                         
+                         <form>
+                            <input type="text" placeholder="E-mail address" class="mailoptin_blend_input">
+                            <input type="submit" value="Shop Now!" class="mailoptin_blend_input_submit">
+                         </form>
+                         
+                         <div class="mailoptin_blend_agreement_note">i agree to recieve update and other promotional.</div>
+                         
+                       </div>
+                   </div>
+                   <div class="mailoptin_blend_right">
+                     <div class="mailoption_ricko_image">
+                           <img src="image.png">
+                     </div>
+                   </div>
+                   
+               </div>
+               </div>
+            </div> -->
+  </body>
+</html>
